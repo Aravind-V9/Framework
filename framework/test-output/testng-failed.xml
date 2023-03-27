@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="Resources.Listeners"/>
+  </listeners>
+  <test thread-count="5" name="SubmitOrder(failed)">
+    <classes>
+      <class name="framework.TestCase">
+        <methods>
+          <include name="CompleteOrder"/>
+          <include name="tearDown"/>
+          <include name="orderValidation"/>
+          <include name="launchApplication"/>
+        </methods>
+      </class> <!-- framework.TestCase -->
+    </classes>
+  </test> <!-- SubmitOrder(failed) -->
+  <test thread-count="5" name="LoginError(failed)">
+    <classes>
+      <class name="framework.ErrorValidation">
+        <methods>
+          <include name="errorValidation"/>
+          <include name="tearDown"/>
+          <include name="launchApplication"/>
+        </methods>
+      </class> <!-- framework.ErrorValidation -->
+    </classes>
+  </test> <!-- LoginError(failed) -->
+</suite> <!-- Failed suite [Suite] -->
