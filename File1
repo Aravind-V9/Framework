@@ -1,0 +1,8 @@
+string
+        String json = "{"
+                + "\"name\":\"" + itemName + "\","
+                + "\"description\":\"" + description + "\","
+                + "\"quantity\":" + quantity + ","
+                + "\"rate\":" + rate + ","
+                + "\"amount\":" + amount
+                + "}";
