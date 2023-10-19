@@ -7,4 +7,28 @@ string
                 + "\"amount\":" + amount
                 + "}";
 
+If you're looking for a simpler way to extract the month name, day, and year from the date value "12/07/2024" in Java, you can use the Java 8 Date-Time API, which provides a more straightforward approach. Here's how you can do it:
+
+java
+Copy code
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
+public class DateExtraction {
+    public static void main(String[] args) {
+        String dateValue = "12/07/2024";
+        
+        // Define the date format of the input string
+        DateTimeFormatter inputFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        
+        // Parse the input string into a LocalDate object
+        LocalDate date = LocalDate.parse(dateValue, inputFormat);
+        
+        // Extract the month name, day, and year
+        String month = date.getMonth().toString();
+        String day = String.valueOf(date.getDayOfMonth());
+        String year = String.valueOf(date.getYear());
+        
+        System.out.println("Month: " + month);
+        System
 =FILTERXML("<root><e>"&SUBSTITUTE(A1," ","</e><e>")&"</e></root>","//e[position() mod 2 = 0]")
