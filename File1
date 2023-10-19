@@ -6,3 +6,5 @@ string
                 + "\"rate\":" + rate + ","
                 + "\"amount\":" + amount
                 + "}";
+
+=FILTERXML("<root><e>"&SUBSTITUTE(A1," ","</e><e>")&"</e></root>","//e[position() mod 2 = 0]")
