@@ -12,27 +12,42 @@ public class DueDateCalculator {
         char termType = term.charAt(0);
         int termValue = Integer.parseInt(term.substring(1));
 
-        int maxDayInMonth = calendar.getActualMaximum(Calendar.DAY_OF_MONTH);
-
-        if (termValue > maxDayInMonth) {
-            termValue = maxDayInMonth; // Use the last day of the month
-        }
-
+        int maxDayInMonth;
         switch (termType) {
             case 'D':
+                // No need to check, just add the days
                 calendar.add(Calendar.DAY_OF_MONTH, termValue);
                 break;
             case 'X':
+                // Add a month
                 calendar.add(Calendar.MONTH, 1);
-                calendar.set(Calendar.DAY_OF_MONTH, termValue);
+                maxDayInMonth = calendar.getActualMaximum(Calendar.DAY_OF_MONTH);
+                if (termValue > maxDayInMonth) {
+                    // If the specified day doesn't exist, set it to the last day of the month
+                    calendar.set(Calendar.DAY_OF_MONTH, maxDayInMonth);
+                } else {
+                    calendar.set(Calendar.DAY_OF_MONTH, termValue);
+                }
                 break;
             case 'Y':
+                // Add two months
                 calendar.add(Calendar.MONTH, 2);
-                calendar.set(Calendar.DAY_OF_MONTH, termValue);
+                maxDayInMonth = calendar.getActualMaximum(Calendar.DAY_OF_MONTH);
+                if (termValue > maxDayInMonth) {
+                    calendar.set(Calendar.DAY_OF_MONTH, maxDayInMonth);
+                } else {
+                    calendar.set(Calendar.DAY_OF_MONTH, termValue);
+                }
                 break;
             case 'Z':
+                // Add three months
                 calendar.add(Calendar.MONTH, 3);
-                calendar.set(Calendar.DAY_OF_MONTH, termValue);
+                maxDayInMonth = calendar.getActualMaximum(Calendar.DAY_OF_MONTH);
+                if (termValue > maxDayInMonth) {
+                    calendar.set(Calendar.DAY_OF_MONTH, maxDayInMonth);
+                } else {
+                    calendar.set(Calendar.DAY_OF_MONTH, termValue);
+                }
                 break;
             default:
                 throw new IllegalArgumentException("Invalid term: " + term);
