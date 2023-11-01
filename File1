@@ -1,34 +1,47 @@
-string
-        String json = "{"
-                + "\"name\":\"" + itemName + "\","
-                + "\"description\":\"" + description + "\","
-                + "\"quantity\":" + quantity + ","
-                + "\"rate\":" + rate + ","
-                + "\"amount\":" + amount
-                + "}";
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
-If you're looking for a simpler way to extract the month name, day, and year from the date value "12/07/2024" in Java, you can use the Java 8 Date-Time API, which provides a more straightforward approach. Here's how you can do it:
+public class DueDateCalculator {
 
-java
-Copy code
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
+    public static Date calculateDueDate(String term, Date invoiceDate) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(invoiceDate);
 
-public class DateExtraction {
-    public static void main(String[] args) {
-        String dateValue = "12/07/2024";
-        
-        // Define the date format of the input string
-        DateTimeFormatter inputFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        
-        // Parse the input string into a LocalDate object
-        LocalDate date = LocalDate.parse(dateValue, inputFormat);
-        
-        // Extract the month name, day, and year
-        String month = date.getMonth().toString();
-        String day = String.valueOf(date.getDayOfMonth());
-        String year = String.valueOf(date.getYear());
-        
-        System.out.println("Month: " + month);
-        System
-=FILTERXML("<root><e>"&SUBSTITUTE(A1," ","</e><e>")&"</e></root>","//e[position() mod 2 = 0]")
+        char termType = term.charAt(0);
+        int termValue = Integer.parseInt(term.substring(1));
+
+        switch (termType) {
+            case 'D':
+                calendar.add(Calendar.DAY_OF_MONTH, termValue);
+                break;
+            case 'X':
+                calendar.add(Calendar.MONTH, 1);
+                calendar.set(Calendar.DAY_OF_MONTH, termValue);
+                break;
+            case 'Y':
+                calendar.add(Calendar.MONTH, 2);
+                calendar.set(Calendar.DAY_OF_MONTH, termValue);
+                break;
+            case 'Z':
+                calendar.add(Calendar.MONTH, 3);
+                calendar.set(Calendar.DAY_OF_MONTH, termValue);
+                break;
+            default:
+                throw new IllegalArgumentException("Invalid term: " + term);
+        }
+
+        return calendar.getTime();
+    }
+
+    public static void main(String[] args) throws ParseException {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        Date invoiceDate = dateFormat.parse("26/01/2023");
+
+        String term = "X20"; // Replace with the desired term (e.g., X20, Y15, D30, etc.)
+
+        Date dueDate = calculateDueDate(term, invoiceDate);
+        System.out.println("Due Date: " + dateFormat.format(dueDate));
+    }
+}
