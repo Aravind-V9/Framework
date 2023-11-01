@@ -12,6 +12,12 @@ public class DueDateCalculator {
         char termType = term.charAt(0);
         int termValue = Integer.parseInt(term.substring(1));
 
+        int maxDayInMonth = calendar.getActualMaximum(Calendar.DAY_OF_MONTH);
+
+        if (termValue > maxDayInMonth) {
+            termValue = maxDayInMonth; // Use the last day of the month
+        }
+
         switch (termType) {
             case 'D':
                 calendar.add(Calendar.DAY_OF_MONTH, termValue);
@@ -39,7 +45,7 @@ public class DueDateCalculator {
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         Date invoiceDate = dateFormat.parse("26/01/2023");
 
-        String term = "X20"; // Replace with the desired term (e.g., X20, Y15, D30, etc.)
+        String term = "X31"; // Replace with the desired term (e.g., X31, Y15, D30, etc.)
 
         Date dueDate = calculateDueDate(term, invoiceDate);
         System.out.println("Due Date: " + dateFormat.format(dueDate));
