@@ -1,68 +1,72 @@
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
+  //use SFTP to download files
+                        //get SFTP configuration id
+                        let objSFTPConfigSearchResults = getSFTPConfig();
+                        log.debug(_LOGGER_TITLE + "SFTP Config Search: ", objSFTPConfigSearchResults);
 
-public class DueDateCalculator {
+                        var objSFTPConfig = {
+                            hostKey: objSFTPConfigSearchResults[0].getValue("custrecord_sftp_ib_host_key"),
+                            hostKeyType: objSFTPConfigSearchResults[0].getValue("custrecord_sftp_ib_host_key_type"),
+                            port: parseInt(objSFTPConfigSearchResults[0].getValue("custrecord_sftp_ib_port")),
+                            url: objSFTPConfigSearchResults[0].getValue("custrecord_sftp_ib_server_url"),
+                            username: objSFTPConfigSearchResults[0].getValue("custrecord_sftp_ib_username")
+                        };
 
-    public static Date calculateDueDate(String term, Date invoiceDate) {
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTime(invoiceDate);
+                        //directory on 3rd party server
+                        let strDirectory = objSFTPConfigSearchResults[0].getValue({
+                            name: "custrecord_ps_sftp_ib_bank_fld_from",
+                            join: "CUSTRECORD_PS_SFTP_IB_CONFIG_REL"
+                        });
+                        objSFTPConfig.directory = strDirectory;
 
-        char termType = term.charAt(0);
-        int termValue = Integer.parseInt(term.substring(1));
+                        // auth: username & password;
+                        let INT_AUTH_METHOD_USERNAME = 1;
+                        objSFTPConfig.authMethod = INT_AUTH_METHOD_USERNAME;
+                        let strPassword = objSFTPConfigSearchResults[0].getValue("custrecord_sftp_ib_password");
+                        objSFTPConfig.passwordGuid = strPassword;
 
-        int maxDayInMonth;
-        switch (termType) {
-            case 'D':
-                // No need to check, just add the days
-                calendar.add(Calendar.DAY_OF_MONTH, termValue);
-                break;
-            case 'X':
-                // Add a month
-                calendar.add(Calendar.MONTH, 1);
-                maxDayInMonth = calendar.getActualMaximum(Calendar.DAY_OF_MONTH);
-                if (termValue > maxDayInMonth) {
-                    // If the specified day doesn't exist, set it to the last day of the month
-                    calendar.set(Calendar.DAY_OF_MONTH, maxDayInMonth);
-                } else {
-                    calendar.set(Calendar.DAY_OF_MONTH, termValue);
-                }
-                break;
-            case 'Y':
-                // Add two months
-                calendar.add(Calendar.MONTH, 2);
-                maxDayInMonth = calendar.getActualMaximum(Calendar.DAY_OF_MONTH);
-                if (termValue > maxDayInMonth) {
-                    calendar.set(Calendar.DAY_OF_MONTH, maxDayInMonth);
-                } else {
-                    calendar.set(Calendar.DAY_OF_MONTH, termValue);
-                }
-                break;
-            case 'Z':
-                // Add three months
-                calendar.add(Calendar.MONTH, 3);
-                maxDayInMonth = calendar.getActualMaximum(Calendar.DAY_OF_MONTH);
-                if (termValue > maxDayInMonth) {
-                    calendar.set(Calendar.DAY_OF_MONTH, maxDayInMonth);
-                } else {
-                    calendar.set(Calendar.DAY_OF_MONTH, termValue);
-                }
-                break;
-            default:
-                throw new IllegalArgumentException("Invalid term: " + term);
-        }
+                        log.debug(_LOGGER_TITLE + "SFTP config: ", objSFTPConfig);
 
-        return calendar.getTime();
-    }
+                        let intNSFolderId = parseInt(objSFTPConfigSearchResults[0].getValue({
+                            name: "custrecord_ps_sftp_ib_ns_fld",
+                            join: "CUSTRECORD_PS_SFTP_IB_CONFIG_REL"
+                        }));
+                        log.debug("NS folder id: ", intNSFolderId);
 
-    public static void main(String[] args) throws ParseException {
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-        Date invoiceDate = dateFormat.parse("26/01/2023");
+                        var arrFiles = [];
+                        if (objSFTPConfig.passwordGuid && intNSFolderId && objSFTPConfig.hostKey && objSFTPConfig.hostKeyType && objSFTPConfig.port &&
+                            objSFTPConfig.url && objSFTPConfig.username)
+                        {
+                            //establish connection
+                            let objSFTPConnection = sftp.createConnection(objSFTPConfig);
+                            log.debug(_LOGGER_TITLE + "SFTP connection: ", objSFTPConnection);
 
-        String term = "X31"; // Replace with the desired term (e.g., X31, Y15, D30, etc.)
+                            let arrFileList = objSFTPConnection.list();
+                            log.debug(_LOGGER_TITLE + "arrFileList: ", arrFileList);
 
-        Date dueDate = calculateDueDate(term, invoiceDate);
-        System.out.println("Due Date: " + dateFormat.format(dueDate));
-    }
-}
+                            log.debug(_LOGGER_TITLE + "file counter: ", arrFiles.length);
+
+                            if (arrFileList.length > 0)
+                            {
+                                var strFilename = arrFileList[0].name;
+                                objSFTPConfig.filename = strFilename;
+                                log.debug(_LOGGER_TITLE + "file from SFTP filename: ", strFilename);
+
+                                let objConnection = sftp.createConnection(objSFTPConfig);
+                                log.debug(_LOGGER_TITLE + "SFTP connection: ", objConnection);
+
+                                objFile = objConnection.download({
+                                    filename: objSFTPConfig.filename
+                                });
+                            }
+                            else
+                            {
+                                log.debug(_LOGGER_TITLE, "There are no files in the server directory " + strDirectory);
+                            }
+                        }
+                        else {
+                            throw error.create({
+                                name: 'SFTP CONFIG ERROR',
+                                message: 'SFTP Configuration is missing some of the values, please verify the settings in NetSuite.'
+                            });
+                        }
+                    }
