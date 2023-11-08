@@ -1,72 +1,7 @@
-  //use SFTP to download files
-                        //get SFTP configuration id
-                        let objSFTPConfigSearchResults = getSFTPConfig();
-                        log.debug(_LOGGER_TITLE + "SFTP Config Search: ", objSFTPConfigSearchResults);
+fingerprint=ecdsa-sha2-nistp256-2tQOft-OH0jT7J3P43eO8XZo8abctFUX2G4gtokHvvo
 
-                        var objSFTPConfig = {
-                            hostKey: objSFTPConfigSearchResults[0].getValue("custrecord_sftp_ib_host_key"),
-                            hostKeyType: objSFTPConfigSearchResults[0].getValue("custrecord_sftp_ib_host_key_type"),
-                            port: parseInt(objSFTPConfigSearchResults[0].getValue("custrecord_sftp_ib_port")),
-                            url: objSFTPConfigSearchResults[0].getValue("custrecord_sftp_ib_server_url"),
-                            username: objSFTPConfigSearchResults[0].getValue("custrecord_sftp_ib_username")
-                        };
+5QJaKgZVp7s9
 
-                        //directory on 3rd party server
-                        let strDirectory = objSFTPConfigSearchResults[0].getValue({
-                            name: "custrecord_ps_sftp_ib_bank_fld_from",
-                            join: "CUSTRECORD_PS_SFTP_IB_CONFIG_REL"
-                        });
-                        objSFTPConfig.directory = strDirectory;
+edabf0714bd243058ef7ad3f200b48ee
 
-                        // auth: username & password;
-                        let INT_AUTH_METHOD_USERNAME = 1;
-                        objSFTPConfig.authMethod = INT_AUTH_METHOD_USERNAME;
-                        let strPassword = objSFTPConfigSearchResults[0].getValue("custrecord_sftp_ib_password");
-                        objSFTPConfig.passwordGuid = strPassword;
-
-                        log.debug(_LOGGER_TITLE + "SFTP config: ", objSFTPConfig);
-
-                        let intNSFolderId = parseInt(objSFTPConfigSearchResults[0].getValue({
-                            name: "custrecord_ps_sftp_ib_ns_fld",
-                            join: "CUSTRECORD_PS_SFTP_IB_CONFIG_REL"
-                        }));
-                        log.debug("NS folder id: ", intNSFolderId);
-
-                        var arrFiles = [];
-                        if (objSFTPConfig.passwordGuid && intNSFolderId && objSFTPConfig.hostKey && objSFTPConfig.hostKeyType && objSFTPConfig.port &&
-                            objSFTPConfig.url && objSFTPConfig.username)
-                        {
-                            //establish connection
-                            let objSFTPConnection = sftp.createConnection(objSFTPConfig);
-                            log.debug(_LOGGER_TITLE + "SFTP connection: ", objSFTPConnection);
-
-                            let arrFileList = objSFTPConnection.list();
-                            log.debug(_LOGGER_TITLE + "arrFileList: ", arrFileList);
-
-                            log.debug(_LOGGER_TITLE + "file counter: ", arrFiles.length);
-
-                            if (arrFileList.length > 0)
-                            {
-                                var strFilename = arrFileList[0].name;
-                                objSFTPConfig.filename = strFilename;
-                                log.debug(_LOGGER_TITLE + "file from SFTP filename: ", strFilename);
-
-                                let objConnection = sftp.createConnection(objSFTPConfig);
-                                log.debug(_LOGGER_TITLE + "SFTP connection: ", objConnection);
-
-                                objFile = objConnection.download({
-                                    filename: objSFTPConfig.filename
-                                });
-                            }
-                            else
-                            {
-                                log.debug(_LOGGER_TITLE, "There are no files in the server directory " + strDirectory);
-                            }
-                        }
-                        else {
-                            throw error.create({
-                                name: 'SFTP CONFIG ERROR',
-                                message: 'SFTP Configuration is missing some of the values, please verify the settings in NetSuite.'
-                            });
-                        }
-                    }
+AAAAB3NzaC1yc2EAAAADAQABAAABAQC76Z/+BJK/Nd5cc6Yhrd/kUHso5TGevOEorfUKtmRo/Ciim06Khk7wiDdcDhaV/KLiQChSOfzoW5of0AQqYQ7VxJ1gtHPNpZHz2e3tslki9sEJt8OO892hBqb9ywDf1ph3Id99LF+MO316dsssDIynw+3PpvrxJN/ZtjM02HYmiDcfmCUM1zEtIJjuBJinQ22Oi3PFFcwEMPyL4t9U+uIzlVbwE9QR2xyc2rTtVcvEAKci52DZCfhyR08XU6RDFssY6Lr7GbUTPyvlZx6nTBXITVlMSUgOAKoae3J5rYCPm+I4bObmFq5nZzrPl10PYrj5WyPxBe1vbVZCaPt5OThl
