@@ -1,7 +1,33 @@
-fingerprint=ecdsa-sha2-nistp256-2tQOft-OH0jT7J3P43eO8XZo8abctFUX2G4gtokHvvo
+Sub SendNotification()
+    Dim OutApp As Object
+    Dim OutMail As Object
+    Dim ws As Worksheet
+    Dim cell As Range
 
-5QJaKgZVp7s9
+    Set ws = ThisWorkbook.Sheets("Sheet1")  ' Change "Sheet1" to your sheet name
 
-edabf0714bd243058ef7ad3f200b48ee
+    ' Loop through the cells with remaining days
+    For Each cell In ws.Range("B2:B" & ws.Cells(ws.Rows.Count, "B").End(xlUp).Row)
+        If cell.Value <= 0 Then  ' Check if remaining days is less than or equal to 0
+            ' Set up Outlook
+            Set OutApp = CreateObject("Outlook.Application")
+            Set OutMail = OutApp.CreateItem(0)
 
-AAAAB3NzaC1yc2EAAAADAQABAAABAQC76Z/+BJK/Nd5cc6Yhrd/kUHso5TGevOEorfUKtmRo/Ciim06Khk7wiDdcDhaV/KLiQChSOfzoW5of0AQqYQ7VxJ1gtHPNpZHz2e3tslki9sEJt8OO892hBqb9ywDf1ph3Id99LF+MO316dsssDIynw+3PpvrxJN/ZtjM02HYmiDcfmCUM1zEtIJjuBJinQ22Oi3PFFcwEMPyL4t9U+uIzlVbwE9QR2xyc2rTtVcvEAKci52DZCfhyR08XU6RDFssY6Lr7GbUTPyvlZx6nTBXITVlMSUgOAKoae3J5rYCPm+I4bObmFq5nZzrPl10PYrj5WyPxBe1vbVZCaPt5OThl
+            ' Customize the email details
+            With OutMail
+                .To = "user@example.com"
+                .Subject = "Expiration Notification"
+                .Body = "The item with expiry date " & cell.Offset(0, -1).Value & " has expired."
+                ' Add any additional customization as needed
+                ' .CC, .BCC, etc.
+            End With
+
+            ' Send the email
+            OutMail.Send
+
+            ' Release Outlook objects
+            Set OutMail = Nothing
+            Set OutApp = Nothing
+        End If
+    Next cell
+End Sub
