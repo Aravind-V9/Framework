@@ -1,0 +1,49 @@
+import com.opencsv.CSVReader;
+import com.opencsv.CSVWriter;
+
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.List;
+
+public class CSVUpdater {
+    public static void main(String[] args) {
+        String csvFilePath = "path/to/your/file.csv";
+        String[] fieldsToUpdate = {"Field1", "Field2"}; // Add the names of fields you want to update
+
+        try (CSVReader reader = new CSVReader(new FileReader(csvFilePath));
+             CSVWriter writer = new CSVWriter(new FileWriter(csvFilePath))) {
+
+            List<String[]> lines = reader.readAll();
+
+            // Assuming the first line contains the headers
+            String[] headers = lines.get(0);
+
+            // Find the indices of fields to update
+            int[] fieldIndices = new int[fieldsToUpdate.length];
+            for (int i = 0; i < fieldsToUpdate.length; i++) {
+                for (int j = 0; j < headers.length; j++) {
+                    if (headers[j].equals(fieldsToUpdate[i])) {
+                        fieldIndices[i] = j;
+                        break;
+                    }
+                }
+            }
+
+            // Update values in each line
+            for (int i = 1; i < lines.size(); i++) {
+                String[] line = lines.get(i);
+                for (int index : fieldIndices) {
+                    // Perform your update logic here
+                    line[index] = "NewValue"; // Replace "NewValue" with the updated value
+                }
+            }
+
+            // Write the changes back to the CSV file
+            writer.writeAll(lines);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
