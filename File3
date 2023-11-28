@@ -1,0 +1,33 @@
+ilpublic static void writeTestData(String testDataFile, String sheetName, String testCaseId, Map<String, String> testData) throws Exception {
+    String updateQuery = null;
+    Fillo fillo = new Fillo();
+    Connection conn = null;
+
+    try {
+        conn = fillo.getConnection(testDataFile);
+        
+        // Create an update query based on the TestCaseId
+        updateQuery = String.format("UPDATE %s SET ", sheetName);
+        
+        for (Map.Entry<String, String> entry : testData.entrySet()) {
+            updateQuery += entry.getKey() + "='" + entry.getValue() + "', ";
+        }
+        
+        // Remove the trailing comma and space
+        updateQuery = updateQuery.substring(0, updateQuery.length() - 2);
+        
+        // Add the WHERE clause
+        updateQuery += String.format(" WHERE TestCaseId='%s'", testCaseId);
+        
+        // Execute the update query
+        conn.executeUpdate(updateQuery);
+
+    } catch (FilloException e) {
+        e.printStackTrace();
+        throw new Exception("Error writing data to Excel");
+    } finally {
+        if (conn != null) {
+            conn.close();
+        }
+    }
+}
