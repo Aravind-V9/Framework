@@ -1,0 +1,27 @@
+public static Map<String, String> getTestDataInMap(String testDataFile) throws Exception {
+    Map<String, String> TestDataInMap = new TreeMap<>();  
+    String query = "SELECT * FROM Sheet1"; // Assuming your sheet name is "Sheet1"
+    Fillo fillo = new Fillo();
+    Connection conn = null;
+    Recordset recordset = null;
+    
+    try {
+        conn = fillo.getConnection(testDataFile);
+        recordset = conn.executeQuery(query);
+        
+        if (recordset.next()) {
+            for (String field : recordset.getFieldNames()) {
+                TestDataInMap.put(field, recordset.getField(field));
+            }
+        } else {
+            throw new Exception("No test data found");
+        }
+    } catch (FilloException e) {
+        e.printStackTrace();
+        throw new Exception("Test data cannot be found");
+    } finally {
+        conn.close();
+    }
+    
+    return TestDataInMap;  
+}
