@@ -1,0 +1,36 @@
+import java.io.File;
+
+public class LastModifiedFileExample {
+
+    public static void main(String[] args) {
+        // Set the path to your directory
+        String directoryPath = "/path/to/your/directory";
+
+        // Get the last modified file from the directory
+        File lastModifiedFile = getLastModifiedFile(directoryPath);
+
+        if (lastModifiedFile != null) {
+            // Print the last modified file name
+            System.out.println("Last Modified File: " + lastModifiedFile.getName());
+        } else {
+            System.out.println("No files found in the directory.");
+        }
+    }
+
+    // Helper method to get the last modified file from a directory
+    private static File getLastModifiedFile(String directoryPath) {
+        File dir = new File(directoryPath);
+        File[] files = dir.listFiles();
+
+        if (files != null && files.length > 0) {
+            File lastModifiedFile = files[0];
+            for (File file : files) {
+                if (file.lastModified() > lastModifiedFile.lastModified()) {
+                    lastModifiedFile = file;
+                }
+            }
+            return lastModifiedFile;
+        }
+        return null;
+    }
+}
