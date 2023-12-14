@@ -24,4 +24,15 @@ public static Map<String, String> getTestDataInMap(String testDataFile) throws E
     }
     
     return TestDataInMap;  
+}private static String getFirstSheetName(String testDataFile) throws FilloException {
+    Fillo fillo = new Fillo();
+    Connection conn = fillo.getConnection(testDataFile);
+    List<String> sheetNames = conn.getMetaData().getTableNames();
+    conn.close();
+
+    if (sheetNames.isEmpty()) {
+        throw new FilloException("No sheets found in the workbook");
+    }
+
+    return sheetNames.get(0);
 }
