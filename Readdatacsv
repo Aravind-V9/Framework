@@ -1,0 +1,46 @@
+import com.opencsv.CSVReader;
+import com.opencsv.exceptions.CsvException;
+
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+public class CsvReader {
+    public static void main(String[] args) {
+        // Specify the path to your CSV file
+        String filePath = "path/to/your/csv/file.csv";
+
+        // Initialize a map to store field and value pairs
+        Map<String, String> dataMap = new HashMap<>();
+
+        try (CSVReader csvReader = new CSVReader(new FileReader(filePath))) {
+            // Read all records from the CSV file
+            List<String[]> records = csvReader.readAll();
+
+            // Assuming the first row contains field names
+            String[] fieldNames = records.get(0);
+
+            // Iterate through the records starting from the second row
+            for (int i = 1; i < records.size(); i++) {
+                String[] values = records.get(i);
+
+                // Iterate through field names and get corresponding values
+                for (int j = 0; j < fieldNames.length; j++) {
+                    String fieldName = fieldNames[j];
+                    String value = values[j];
+                    dataMap.put(fieldName, value);
+                }
+
+                // Process dataMap as needed for each row
+
+                // Clear the map for the next iteration
+                dataMap.clear();
+            }
+
+        } catch (IOException | CsvException e) {
+            e.printStackTrace();
+        }
+    }
+}
