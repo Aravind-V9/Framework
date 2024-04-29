@@ -1,0 +1,34 @@
+import java.io.File;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
+
+public class FileRenamer {
+    public static void main(String[] args) {
+        String directory = "/path/to/directory";
+        int counter = 161;
+
+        File dir = new File(directory);
+        File[] files = dir.listFiles((dir1, name) -> name.matches("STHOA037\\.\\d+"));
+
+        if (files != null) {
+            for (File file : files) {
+                String oldName = file.getName();
+                String newName = "STHOA037.620240423212619." + String.format("%03d", counter);
+
+                Path source = file.toPath();
+                Path destination = Paths.get(directory, newName);
+
+                try {
+                    Files.move(source, destination, StandardCopyOption.REPLACE_EXISTING);
+                    System.out.println("Renamed '" + oldName + "' to '" + newName + "'");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+                counter++;
+            }
+        }
+    }
+}
