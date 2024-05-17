@@ -19,8 +19,9 @@ public class SalesDataProcessor {
         }
 
         private double parseAmount(String data) {
-            double value = Double.parseDouble(data.substring(6, 15).trim());
-            char sign = data.charAt(15);
+            String amountStr = data.substring(11, 21).trim();
+            char sign = data.charAt(21);
+            double value = Double.parseDouble(amountStr);
             return sign == '-' ? -value : value;
         }
     }
@@ -55,7 +56,8 @@ public class SalesDataProcessor {
 
     private static List<Record> parseRecords(List<String> lines) {
         return lines.stream()
-            .map(line -> new Record(line.substring(0, 2), line.substring(19, 23).trim(), line))
+            .filter(line -> line.startsWith("AH") || line.startsWith("A8") || line.startsWith("AD") || line.startsWith("A5"))
+            .map(line -> new Record(line.substring(0, 2), line.length() >= 26 ? line.substring(22, 26).trim() : "", line))
             .collect(Collectors.toList());
     }
 
