@@ -1,0 +1,91 @@
+import java.io.*;
+import java.nio.file.*;
+import java.util.*;
+import java.util.stream.*;
+
+public class SalesDataProcessor {
+
+    static class Record {
+        String type;
+        String tranCode;
+        String data;
+        double amount;
+
+        Record(String type, String tranCode, String data) {
+            this.type = type;
+            this.tranCode = tranCode;
+            this.data = data;
+            this.amount = parseAmount(data);
+        }
+
+        private double parseAmount(String data) {
+            double value = Double.parseDouble(data.substring(6, 15).trim());
+            char sign = data.charAt(15);
+            return sign == '-' ? -value : value;
+        }
+    }
+
+    public static void main(String[] args) throws IOException {
+        Path dirPath = Paths.get("path/to/your/directory");
+
+        try (Stream<Path> paths = Files.walk(dirPath)) {
+            paths.filter(Files::isRegularFile).forEach(filePath -> {
+                try {
+                    List<String> lines = Files.readAllLines(filePath);
+                    List<Record> records = parseRecords(lines);
+
+                    double tenderTotal = calculateTenderTotal(records);
+                    double knbTotal = calculateKnBTotal(records);
+                    double priceTotal = calculatePriceTotal(records);
+                    double orderTotal = calculateOrderTotal(records);
+
+                    System.out.println("File: " + filePath.getFileName());
+                    System.out.println("Tender Total: " + tenderTotal);
+                    System.out.println("KnB Total: " + knbTotal);
+                    System.out.println("Price Total: " + priceTotal);
+                    System.out.println("Order Total: " + orderTotal);
+                    System.out.println();
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            });
+        }
+    }
+
+    private static List<Record> parseRecords(List<String> lines) {
+        return lines.stream()
+            .map(line -> new Record(line.substring(0, 2), line.substring(19, 23).trim(), line))
+            .collect(Collectors.toList());
+    }
+
+    private static double calculateTenderTotal(List<Record> records) {
+        Set<String> relevantTranCodes = Set.of("8499", "8498", "8440", "8411", "8410", "8406", "8404", "8402", "8401", "8415", "3009");
+        return records.stream()
+            .filter(record -> record.type.equals("A8") && relevantTranCodes.contains(record.tranCode))
+            .mapToDouble(record -> record.amount)
+            .sum();
+    }
+
+    private static double calculateKnBTotal(List<Record> records) {
+        Set<String> relevantTranCodes = Set.of("9999", "9998");
+        return records.stream()
+            .filter(record -> record.type.equals("A8") && relevantTranCodes.contains(record.tranCode))
+            .mapToDouble(record -> record.amount * -1)
+            .sum();
+    }
+
+    private static double calculatePriceTotal(List<Record> records) {
+        return records.stream()
+            .filter(record -> record.type.equals("AH"))
+            .mapToDouble(record -> record.amount)
+            .sum();
+    }
+
+    private static double calculateOrderTotal(List<Record> records) {
+        return records.stream()
+            .filter(record -> record.type.equals("AD"))
+            .mapToDouble(record -> record.amount)
+            .sum();
+    }
+}
