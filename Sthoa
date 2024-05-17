@@ -60,7 +60,7 @@ public class SalesDataProcessor {
     }
 
     private static double calculateTenderTotal(List<Record> records) {
-        Set<String> relevantTranCodes = Set.of("8499", "8498", "8440", "8411", "8410", "8406", "8404", "8402", "8401", "8415", "3009");
+        Set<String> relevantTranCodes = new HashSet<>(Arrays.asList("8499", "8498", "8440", "8411", "8410", "8406", "8404", "8402", "8401", "8415", "3009"));
         return records.stream()
             .filter(record -> record.type.equals("A8") && relevantTranCodes.contains(record.tranCode))
             .mapToDouble(record -> record.amount)
@@ -68,7 +68,7 @@ public class SalesDataProcessor {
     }
 
     private static double calculateKnBTotal(List<Record> records) {
-        Set<String> relevantTranCodes = Set.of("9999", "9998");
+        Set<String> relevantTranCodes = new HashSet<>(Arrays.asList("9999", "9998"));
         return records.stream()
             .filter(record -> record.type.equals("A8") && relevantTranCodes.contains(record.tranCode))
             .mapToDouble(record -> record.amount * -1)
