@@ -1,34 +1,58 @@
 import java.io.File;
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 
-public class FileRenamer {
+public class FilenameDateReplacer {
     public static void main(String[] args) {
-        String directory = "/path/to/directory";
-        int counter = 161;
+        String directoryPath = "/path/to/directory";
+        String newDate = "20250523";
+        replaceFilenameDate(directoryPath, newDate);
+    }
 
-        File dir = new File(directory);
-        File[] files = dir.listFiles((dir1, name) -> name.matches("STHOA037\\.\\d+"));
+    public static void replaceFilenameDate(String directoryPath, String newDate) {
+        File directory = new File(directoryPath);
+        File[] files = directory.listFiles();
 
         if (files != null) {
             for (File file : files) {
-                String oldName = file.getName();
-                String newName = "STHOA037.620240423212619." + String.format("%03d", counter);
+                if (file.isFile()) {
+                    String oldFilename = file.getName();
+                    String newFilename = replaceDate(oldFilename, newDate);
 
-                Path source = file.toPath();
-                Path destination = Paths.get(directory, newName);
+                    if (!oldFilename.equals(newFilename)) {
+                        Path oldPath = file.toPath();
+                        Path newPath = Paths.get(directoryPath, newFilename);
 
-                try {
-                    Files.move(source, destination, StandardCopyOption.REPLACE_EXISTING);
-                    System.out.println("Renamed '" + oldName + "' to '" + newName + "'");
-                } catch (Exception e) {
-                    e.printStackTrace();
+                        try {
+                            Files.move(oldPath, newPath, StandardCopyOption.REPLACE_EXISTING);
+                            System.out.println("Renamed " + oldFilename + " to " + newFilename);
+                        } catch (IOException e) {
+                            System.err.println("Error renaming file: " + e.getMessage());
+                        }
+                    }
                 }
-
-                counter++;
             }
+        } else {
+            System.err.println("Invalid directory path: " + directoryPath);
         }
+    }
+
+    public static String replaceDate(String filename, String newDate) {
+        String[] parts = filename.split("\\.");
+        String name = parts[0];
+        String extension = "." + String.join(".", java.util.Arrays.copyOfRange(parts, 1, parts.length));
+
+        // Extract the date part from the name
+        int dateStartIndex = name.length() - 10;
+        String datePart = name.substring(dateStartIndex);
+
+        // Replace the date part with the new date
+        String newName = name.substring(0, dateStartIndex) + newDate;
+
+        // Construct the new filename
+        return newName + extension;
     }
 }
