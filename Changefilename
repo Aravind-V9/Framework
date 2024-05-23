@@ -39,20 +39,20 @@ public class FilenameDateReplacer {
             System.err.println("Invalid directory path: " + directoryPath);
         }
     }
+public static String replaceDate(String filename, String newDate) {
+    String[] parts = filename.split("\\.");
+    String name = parts[0];
+    String extension = "." + String.join(".", java.util.Arrays.copyOfRange(parts, 1, parts.length));
 
-    public static String replaceDate(String filename, String newDate) {
-        String[] parts = filename.split("\\.");
-        String name = parts[0];
-        String extension = "." + String.join(".", java.util.Arrays.copyOfRange(parts, 1, parts.length));
+    // Extract the date part from the name (characters 12 to 19)
+    int dateStartIndex = 11;
+    int dateEndIndex = 19;
+    String datePart = name.substring(dateStartIndex, dateEndIndex);
 
-        // Extract the date part from the name
-        int dateStartIndex = name.length() - 10;
-        String datePart = name.substring(dateStartIndex);
+    // Replace the date part with the new date
+    String newName = name.substring(0, dateStartIndex) + newDate + name.substring(dateEndIndex);
 
-        // Replace the date part with the new date
-        String newName = name.substring(0, dateStartIndex) + newDate;
-
-        // Construct the new filename
-        return newName + extension;
-    }
+    // Construct the new filename
+    return newName + extension;
 }
+
