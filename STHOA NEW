@@ -1,0 +1,120 @@
+import java.io.*;
+import java.nio.file.*;
+import java.util.*;
+import java.util.stream.*;
+
+public class SalesDataProcessor {
+
+    static class Record {
+        String type;
+        String tranCode;
+        String data;
+        double amount;
+
+        Record(String type, String tranCode, String data) {
+            this.type = type;
+            this.tranCode = tranCode;
+            this.data = data;
+            this.amount = parseAmount(data);
+        }
+
+        private double parseAmount(String data) {
+            String amountStr = data.substring(11, 21).trim();
+            char sign = data.charAt(21);
+            double value = Double.parseDouble(amountStr);
+            return sign == '-' ? -value : value;
+        }
+    }
+
+    public static void main(String[] args) throws IOException {
+        Path dirPath = Paths.get("path/to/your/directory");
+        Path csvFilePath = Paths.get("output.csv"); // Path to the output CSV file
+
+        try (BufferedWriter writer = Files.newBufferedWriter(csvFilePath)) {
+            writer.write("Filename,Tender Total,AD+AH,Status,KnB Total,Order Total (AD),Status,A5 Record Status\n");
+
+            try (Stream<Path> paths = Files.walk(dirPath)) {
+                paths.filter(Files::isRegularFile).forEach(filePath -> {
+                    try {
+                        List<String> lines = Files.readAllLines(filePath);
+                        List<Record> records = parseRecords(lines);
+
+                        double tenderTotal = calculateTenderTotal(records);
+                        double adahTotal = calculateADPlusAHTotal(records);
+                        String adahStatus = getTenderVsADAHStatus(tenderTotal, adahTotal);
+
+                        double knbTotal = calculateKnBTotal(records);
+                        double orderTotal = calculateOrderTotal(records);
+                        String knbVsOrderStatus = getKnBVsOrderStatus(knbTotal, orderTotal);
+
+                        boolean hasA5Records = hasA5Records(records);
+                        String a5RecordStatus = hasA5Records ? "Present" : "Not Present";
+
+                        writer.write(String.format("%s,%.2f,%.2f,%s,%.2f,%.2f,%s,%s\n",
+                                filePath.getFileName(), tenderTotal, adahTotal, adahStatus, knbTotal, orderTotal, knbVsOrderStatus, a5RecordStatus));
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                });
+            }
+        }
+    }
+
+    private static List<Record> parseRecords(List<String> lines) {
+        return lines.stream()
+                .filter(line -> line.startsWith("AH") || line.startsWith("A8") || line.startsWith("AD") || line.startsWith("A5"))
+                .map(line -> new Record(line.substring(0, 2), line.length() >= 26 ? line.substring(22, 26).trim() : "", line))
+                .collect(Collectors.toList());
+    }
+
+    private static double calculateTenderTotal(List<Record> records) {
+        Set<String> relevantTranCodes = new HashSet<>(Arrays.asList("8499", "8498", "8440", "8411", "8410", "8406", "8404", "8402", "8401", "8415", "3009"));
+        return records.stream()
+                .filter(record -> record.type.equals("A8") && relevantTranCodes.contains(record.tranCode))
+                .mapToDouble(record -> record.amount)
+                .sum();
+    }
+
+    private static double calculateKnBTotal(List<Record> records) {
+        Set<String> relevantTranCodes = new HashSet<>(Arrays.asList("9999", "9998"));
+        return records.stream()
+                .filter(record -> record.type.equals("A8") && relevantTranCodes.contains(record.tranCode))
+                .mapToDouble(record -> record.amount * -1)
+                .sum();
+    }
+
+    private static double calculatePriceTotal(List<Record> records) {
+        return records.stream()
+                .filter(record -> record.type.equals("AH"))
+                .mapToDouble(record -> record.amount)
+                .sum();
+    }
+
+    private static double calculateOrderTotal(List<Record> records) {
+        return records.stream()
+                .filter(record -> record.type.equals("AD"))
+                .mapToDouble(record -> record.amount)
+                .sum();
+    }
+
+    private static double calculateADPlusAHTotal(List<Record> records) {
+        return Math.round(records.stream()
+                .filter(record -> record.type.equals("AD") || record.type.equals("AH"))
+                .mapToDouble(record -> record.amount)
+                .sum() * 100.0) / 100.0;
+    }
+
+    private static String getTenderVsADAHStatus(double tenderTotal, double adahTotal) {
+        double difference = Math.abs(tenderTotal - adahTotal);
+        return difference < 0.01 ? "Matched" : "Mismatch";
+    }
+
+    private static String getKnBVsOrderStatus(double knbTotal, double orderTotal) {
+        double difference = Math.abs(knbTotal - orderTotal);
+        return difference < 0.01 ? "Matched" : "Mismatch";
+    }
+
+    private static boolean hasA5Records(List<Record> records) {
+        return records.stream().anyMatch(record -> record.type.equals("A5"));
+    }
+}
