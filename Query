@@ -39,9 +39,9 @@ public class QueryBuilder {
                 for (Map.Entry<String, String> entry : filterMap.entrySet()) {
                     String key = entry.getKey();
                     String value = entry.getValue();
-                    String columnName = getColumnName(key);
+                    String columnName = getColumnName(key, value);
 
-                    queryBuilder.append(" ").append(columnName).append(" = '").append(value).append("'").append(" AND");
+                    queryBuilder.append(" ").append(columnName).append(" AND");
                 }
 
                 // Remove the trailing " AND" within the parentheses
@@ -53,10 +53,10 @@ public class QueryBuilder {
         return queryBuilder.toString();
     }
 
-    private static String getColumnName(String key) {
+    private static String getColumnName(String key, String value) {
         switch (key) {
             case "Source":
-                return "sourcesupplierId";
+                return "(sourcesupplierId = '" + value + "' OR sourceslocationId = '" + value + "')";
             case "Destination":
                 return "destinationlocationId";
             case "Uom":
