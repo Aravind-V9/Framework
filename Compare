@@ -1,0 +1,48 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.util.ArrayList;
+import java.util.List;
+
+public class TableVerification {
+    public static void main(String[] args) {
+        // Initialize the WebDriver (replace with your actual code)
+        WebDriver driver = /* ... */;
+
+        // Locate the table and get all rows
+        WebElement table = driver.findElement(By.tagName("table"));
+        List<WebElement> rows = table.findElements(By.tagName("tr"));
+
+        // Store the table data in a List of Lists
+        List<List<String>> tableData = new ArrayList<>();
+        for (WebElement row : rows) {
+            List<WebElement> cells = row.findElements(By.tagName("td"));
+            List<String> rowData = new ArrayList<>();
+            for (WebElement cell : cells) {
+                rowData.add(cell.getText());
+            }
+            tableData.add(rowData);
+        }
+
+        // Read the CSV file data into a similar data structure
+        List<List<String>> csvData = new ArrayList<>();
+        try (BufferedReader br = new BufferedReader(new FileReader("path/to/csv/file.csv"))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] values = line.split(",");
+                List<String> rowData = new ArrayList<>();
+                for (String value : values) {
+                    rowData.add(value.trim());
+                }
+                csvData.add(rowData);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        // Compare the two data structures and assert that they are equal
+        assert tableData.equals(csvData) : "Table data does not match CSV data";
+    }
+}
