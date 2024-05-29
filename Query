@@ -1,0 +1,70 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.HashMap;
+
+public class QueryBuilder {
+    public static void main(String[] args) {
+        List<Map<String, String>> filterList = new ArrayList<>();
+
+        Map<String, String> filterMap1 = new HashMap<>();
+        filterMap1.put("Source", "sourcesupplierId");
+        filterMap1.put("Destination", "destinationlocationId");
+        filterMap1.put("Uom", "uomname");
+        filterList.add(filterMap1);
+
+        Map<String, String> filterMap2 = new HashMap<>();
+        filterMap2.put("Status", "status");
+        filterList.add(filterMap2);
+
+        String baseQuery = "SELECT * FROM transmode";
+        String finalQuery = buildQuery(baseQuery, filterList);
+        System.out.println(finalQuery);
+    }
+
+    private static String buildQuery(String baseQuery, List<Map<String, String>> filterList) {
+        StringBuilder queryBuilder = new StringBuilder(baseQuery);
+
+        if (!filterList.isEmpty()) {
+            queryBuilder.append(" WHERE");
+
+            for (int i = 0; i < filterList.size(); i++) {
+                Map<String, String> filterMap = filterList.get(i);
+                if (i > 0) {
+                    queryBuilder.append(" AND");
+                }
+
+                queryBuilder.append(" (");
+
+                for (Map.Entry<String, String> entry : filterMap.entrySet()) {
+                    String key = entry.getKey();
+                    String value = entry.getValue();
+                    String columnName = getColumnName(key);
+
+                    queryBuilder.append(" ").append(columnName).append(" = '").append(value).append("'").append(" AND");
+                }
+
+                // Remove the trailing " AND" within the parentheses
+                queryBuilder.setLength(queryBuilder.length() - 4);
+                queryBuilder.append(")");
+            }
+        }
+
+        return queryBuilder.toString();
+    }
+
+    private static String getColumnName(String key) {
+        switch (key) {
+            case "Source":
+                return "sourcesupplierId";
+            case "Destination":
+                return "destinationlocationId";
+            case "Uom":
+                return "uomname";
+            case "Status":
+                return "status";
+            default:
+                return key;
+        }
+    }
+}
