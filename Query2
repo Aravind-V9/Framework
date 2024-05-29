@@ -1,1 +1,48 @@
 
+import java.util.List;
+import java.util.Map;
+
+public class QueryBuilder {
+    public static String buildQuery(Map<String, String> filterMap) {
+        StringBuilder queryBuilder = new StringBuilder("SELECT * FROM transmode WHERE");
+
+        for (Map.Entry<String, String> entry : filterMap.entrySet()) {
+            String key = entry.getKey();
+            String value = entry.getValue();
+            String columnName = getColumnName(key);
+
+            if (!value.isEmpty()) {
+                if (key.equals("Source")) {
+                    queryBuilder.append(" (").append(columnName).append(" = '").append(value).append("'")
+                            .append(" OR sourceslocationId = '").append(value).append("')").append(" AND");
+                } else {
+                    queryBuilder.append(" ").append(columnName).append(" = '").append(value).append("'").append(" AND");
+                }
+            }
+        }
+
+        // Remove the trailing " AND" from the query
+        if (queryBuilder.toString().endsWith(" AND")) {
+            queryBuilder.setLength(queryBuilder.length() - 5);
+        }
+
+        return queryBuilder.toString();
+    }
+
+    private static String getColumnName(String key) {
+        switch (key) {
+            case "Source":
+                return "sourcesupplierId";
+            case "Destination":
+                return "destinationlocationId";
+            case "Transmode":
+                return "transmode";
+            case "Uom":
+                return "uomname";
+            case "Status":
+                return "status";
+            default:
+                return key.toLowerCase();
+        }
+    }
+}
