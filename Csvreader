@@ -1,0 +1,36 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+public class CSVProcessor {
+    public static void main(String[] args) {
+        String csvFile = "path/to/your/csvfile.csv";
+        List<String> processedRows = new ArrayList<>();
+
+        try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
+            String line;
+            
+            // Skip the first row
+            if ((line = br.readLine()) != null) {
+                // First row read and ignored
+            }
+
+            // Read and process each remaining line
+            while ((line = br.readLine()) != null) {
+                // Replace commas with spaces
+                String processedLine = line.replace(",", " ");
+                processedRows.add(processedLine);
+            }
+
+            // Print the processed rows (or use as needed)
+            for (String processedRow : processedRows) {
+                System.out.println(processedRow);
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
