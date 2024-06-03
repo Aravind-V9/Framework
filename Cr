@@ -9,3 +9,10 @@ private static double calculateADPlusAHTotal(List<Record> records) {
                 .sum();
         return Math.round((adTotal + ahTotal) * 100.0) / 100.0;
     }
+private static double calculateADPlusAHTotal(List<Record> records) {
+    double adahTotal = records.stream()
+            .filter(record -> record.type.equals("AD") || record.type.equals("AH"))
+            .mapToDouble(record -> record.amount)
+            .sum();
+    return Math.round(-adahTotal * 100.0) / 100.0;
+}
