@@ -1,3 +1,6 @@
+chrome.exe --remote-debugging-port=9222 --user-data-dir="C:\selenium\ChromeProfile"
+console.log(JSON.parse(JSON.stringify(window.performance.getEntries())).find(e => e.name.includes('webdriver')))
+
 private static double calculateADPlusAHTotal(List<Record> records) {
         double adTotal = records.stream()
                 .filter(record -> record.type.equals("AD"))
