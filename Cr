@@ -1,4 +1,6 @@
 chrome.exe --remote-debugging-port=9222 --user-data-dir="C:\selenium\ChromeProfile"
+"C:\Program Files\Google\Chrome\Application\chrome.exe" --remote-debugging-port=9222 --user-data-dir="C:\ChromeData"
+
 console.log(JSON.parse(JSON.stringify(window.performance.getEntries())).find(e => e.name.includes('webdriver')))
 
 private static double calculateADPlusAHTotal(List<Record> records) {
