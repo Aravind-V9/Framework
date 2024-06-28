@@ -1,0 +1,36 @@
+import org.sikuli.script.*;
+
+public class DynamicScrollAndSelect {
+    public static void main(String[] args) {
+        Screen screen = new Screen();
+        
+        try {
+            Pattern scrollbar = new Pattern("path/to/scrollbar_image.png");
+            Pattern name = new Pattern("path/to/name_image.png");
+            
+            boolean found = false;
+            int maxScrollAttempts = 50; // Adjust this value based on your list size
+            
+            for (int i = 0; i < maxScrollAttempts && !found; i++) {
+                try {
+                    // Try to find the name
+                    screen.find(name);
+                    found = true;
+                    screen.click(name);
+                    System.out.println("Name found and clicked.");
+                } catch (FindFailed e) {
+                    // Name not found, scroll down
+                    screen.wheel(scrollbar, Button.WHEEL_DOWN, 1);
+                    screen.wait(0.5); // Wait for the list to update
+                }
+            }
+            
+            if (!found) {
+                System.out.println("Name not found after " + maxScrollAttempts + " scroll attempts.");
+            }
+            
+        } catch (FindFailed e) {
+            e.printStackTrace();
+        }
+    }
+}
