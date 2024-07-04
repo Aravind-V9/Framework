@@ -1,0 +1,1040 @@
+{
+    "content": [
+        {
+            "gpid": "1000568218",
+            "eventId": "0F986C27-3C9A-490D-BF7D-8D1AF995F057",
+            "sku": "107006",
+            "description": "Dulux Easycare Kitchen Matt Emulsion Paint - Frosted Steel 2.5L",
+            "approvalStatus": "approved",
+            "lifeCycleStatus": "MULTICHANNEL_READY",
+            "webCopy": "Dulux Easycare Kitchen paint is an exceptionally tough grease resistant paint that keeps your room looking great for longer.",
+            "featuresAndBenefits": [
+                "Matt emulsion is smooth and light absorbing, making them perfect for a range of applications",
+                "Grease proof, containing a formula that stops greasy splashes soaking in",
+                "Durable and stain resistant",
+                "Washable, allowing you to clean the surface so you can keep your walls and ceilings in optimum condition without needing to keep repainting them",
+                "Water-based - easier to use and clean off if there's any accidents"
+            ],
+            "taxCode": "S",
+            "mainUom": "EA",
+            "sellingUom": "EA",
+            "supplierCode": "I0165",
+            "supplierPartNumber": "5092147",
+            "keywords": [],
+            "cosshhRequired": false,
+            "dopRequired": false,
+            "weeeRequired": false,
+            "weee": "99",
+            "palletHi": "6",
+            "palletTi": "42",
+            "sellOnly": false,
+            "gtin": "5010212503805",
+            "damAssetId": "I9026_107006",
+            "singleUom": "EA",
+            "catalog": "GroupMasterProductCatalog",
+            "minOrderQuantity": "0",
+            "jdaChannelData": {
+                "catalogId": "jdaProductCatalog",
+                "productCategory": [
+                    "011"
+                ],
+                "description": "Dulux Kitchen Frosted Steel Matt 2.5L",
+                "fulfilmentType": "STANDARD",
+                "approvalStatus": "approved",
+                "brandName": "Dulux",
+                "discontinued": "false",
+                "sellOnly": "false"
+            },
+            "wickesChannelData": {
+                "catalogId": "wickesProductCatalog",
+                "productCategory": [
+                    "1001114",
+                    "1001115",
+                    "1001121"
+                ],
+                "description": "Dulux Easycare Kitchen Matt Emulsion Paint - Frosted Steel - 2.5L",
+                "webCopy": "Dulux Easycare Kitchen paint is an exceptionally tough grease resistant paint that keeps your room looking great for longer. Extra resistant to cooking stains, this paint is washable, which makes it extra easy to maintain.",
+                "fulfilmentType": "STANDARD",
+                "approvalStatus": "approved",
+                "discontinued": "false",
+                "sellOnly": "false"
+            },
+            "singleDimensions": {
+                "length": "164",
+                "height": "162",
+                "width": "160",
+                "weight": "3550",
+                "volume": "4250880"
+            },
+            "innerDimensions": {},
+            "outerDimensions": {},
+            "palletDimensions": {},
+            "jdaCaseDimensions": {
+                "length": "157",
+                "height": "164",
+                "width": "166",
+                "weight": "3571",
+                "volume": "4274168",
+                "quantity": "1"
+            },
+            "images": {
+                "imageName": "gallery",
+                "media": [
+                    {
+                        "mediaName": "I9026_107006_00",
+                        "mediaItem": [
+                            {
+                                "mediaItemName": "I9026_107006_00_detail",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_00?$detail$",
+                                "mediaItemFormat": "detail",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_00",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_00?$SupplierMediaScene7InputFormat$",
+                                "mediaItemFormat": "SupplierMediaScene7InputFormat",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_00_smallThumbnail",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_00?$smallThumbnail$",
+                                "mediaItemFormat": "smallThumbnail",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_00_preview",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_00?$preview$",
+                                "mediaItemFormat": "preview",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_00_thumbnail",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_00?$thumbnail$",
+                                "mediaItemFormat": "thumbnail",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_00_smallNormal",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_00?$smallNormal$",
+                                "mediaItemFormat": "smallNormal",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_00_normal",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_00?$normal$",
+                                "mediaItemFormat": "normal",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_00_largeNormal",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_00?$largeNormal$",
+                                "mediaItemFormat": "largeNormal",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_00_smallDetail",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_00?$smallDetail$",
+                                "mediaItemFormat": "smallDetail",
+                                "mediaItemMimeType": "image/jpeg"
+                            }
+                        ]
+                    },
+                    {
+                        "mediaName": "I9026_107006_01",
+                        "mediaItem": [
+                            {
+                                "mediaItemName": "I9026_107006_01_detail",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_01?$detail$",
+                                "mediaItemFormat": "detail",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_01",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_01?$SupplierMediaScene7InputFormat$",
+                                "mediaItemFormat": "SupplierMediaScene7InputFormat",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_01_smallThumbnail",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_01?$smallThumbnail$",
+                                "mediaItemFormat": "smallThumbnail",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_01_thumbnail",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_01?$thumbnail$",
+                                "mediaItemFormat": "thumbnail",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_01_smallNormal",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_01?$smallNormal$",
+                                "mediaItemFormat": "smallNormal",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_01_normal",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_01?$normal$",
+                                "mediaItemFormat": "normal",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_01_largeNormal",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_01?$largeNormal$",
+                                "mediaItemFormat": "largeNormal",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_01_preview",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_01?$preview$",
+                                "mediaItemFormat": "preview",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_01_smallDetail",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_01?$smallDetail$",
+                                "mediaItemFormat": "smallDetail",
+                                "mediaItemMimeType": "image/jpeg"
+                            }
+                        ]
+                    },
+                    {
+                        "mediaName": "I9026_107006_02",
+                        "mediaItem": [
+                            {
+                                "mediaItemName": "I9026_107006_02_detail",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_02?$detail$",
+                                "mediaItemFormat": "detail",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_02",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_02?$SupplierMediaScene7InputFormat$",
+                                "mediaItemFormat": "SupplierMediaScene7InputFormat",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_02_preview",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_02?$preview$",
+                                "mediaItemFormat": "preview",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_02_thumbnail",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_02?$thumbnail$",
+                                "mediaItemFormat": "thumbnail",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_02_normal",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_02?$normal$",
+                                "mediaItemFormat": "normal",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_02_largeNormal",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_02?$largeNormal$",
+                                "mediaItemFormat": "largeNormal",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_02_smallDetail",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_02?$smallDetail$",
+                                "mediaItemFormat": "smallDetail",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_02_smallThumbnail",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_02?$smallThumbnail$",
+                                "mediaItemFormat": "smallThumbnail",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_02_smallNormal",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_02?$smallNormal$",
+                                "mediaItemFormat": "smallNormal",
+                                "mediaItemMimeType": "image/jpeg"
+                            }
+                        ]
+                    },
+                    {
+                        "mediaName": "I9026_107006_03",
+                        "mediaItem": [
+                            {
+                                "mediaItemName": "I9026_107006_03_detail",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_03?$detail$",
+                                "mediaItemFormat": "detail",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_03",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_03?$SupplierMediaScene7InputFormat$",
+                                "mediaItemFormat": "SupplierMediaScene7InputFormat",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_03_smallThumbnail",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_03?$smallThumbnail$",
+                                "mediaItemFormat": "smallThumbnail",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_03_preview",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_03?$preview$",
+                                "mediaItemFormat": "preview",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_03_thumbnail",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_03?$thumbnail$",
+                                "mediaItemFormat": "thumbnail",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_03_smallNormal",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_03?$smallNormal$",
+                                "mediaItemFormat": "smallNormal",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_03_normal",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_03?$normal$",
+                                "mediaItemFormat": "normal",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_03_largeNormal",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_03?$largeNormal$",
+                                "mediaItemFormat": "largeNormal",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_03_smallDetail",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_03?$smallDetail$",
+                                "mediaItemFormat": "smallDetail",
+                                "mediaItemMimeType": "image/jpeg"
+                            }
+                        ]
+                    },
+                    {
+                        "mediaName": "I9026_107006_04",
+                        "mediaItem": [
+                            {
+                                "mediaItemName": "I9026_107006_04_detail",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_04?$detail$",
+                                "mediaItemFormat": "detail",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_04",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_04?$SupplierMediaScene7InputFormat$",
+                                "mediaItemFormat": "SupplierMediaScene7InputFormat",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_04_smallThumbnail",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_04?$smallThumbnail$",
+                                "mediaItemFormat": "smallThumbnail",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_04_preview",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_04?$preview$",
+                                "mediaItemFormat": "preview",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_04_thumbnail",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_04?$thumbnail$",
+                                "mediaItemFormat": "thumbnail",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_04_smallNormal",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_04?$smallNormal$",
+                                "mediaItemFormat": "smallNormal",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_04_normal",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_04?$normal$",
+                                "mediaItemFormat": "normal",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_04_largeNormal",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_04?$largeNormal$",
+                                "mediaItemFormat": "largeNormal",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_04_smallDetail",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_04?$smallDetail$",
+                                "mediaItemFormat": "smallDetail",
+                                "mediaItemMimeType": "image/jpeg"
+                            }
+                        ]
+                    },
+                    {
+                        "mediaName": "I9026_107006_05",
+                        "mediaItem": [
+                            {
+                                "mediaItemName": "I9026_107006_05_detail",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_05?$detail$",
+                                "mediaItemFormat": "detail",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_05",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_05?$SupplierMediaScene7InputFormat$",
+                                "mediaItemFormat": "SupplierMediaScene7InputFormat",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_05_smallThumbnail",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_05?$smallThumbnail$",
+                                "mediaItemFormat": "smallThumbnail",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_05_preview",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_05?$preview$",
+                                "mediaItemFormat": "preview",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_05_thumbnail",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_05?$thumbnail$",
+                                "mediaItemFormat": "thumbnail",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_05_smallNormal",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_05?$smallNormal$",
+                                "mediaItemFormat": "smallNormal",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_05_normal",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_05?$normal$",
+                                "mediaItemFormat": "normal",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_05_largeNormal",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_05?$largeNormal$",
+                                "mediaItemFormat": "largeNormal",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_05_smallDetail",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_05?$smallDetail$",
+                                "mediaItemFormat": "smallDetail",
+                                "mediaItemMimeType": "image/jpeg"
+                            }
+                        ]
+                    },
+                    {
+                        "mediaName": "I9026_107006_06",
+                        "mediaItem": [
+                            {
+                                "mediaItemName": "I9026_107006_06_detail",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_06?$detail$",
+                                "mediaItemFormat": "detail",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_06",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_06?$SupplierMediaScene7InputFormat$",
+                                "mediaItemFormat": "SupplierMediaScene7InputFormat",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_06_smallThumbnail",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_06?$smallThumbnail$",
+                                "mediaItemFormat": "smallThumbnail",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_06_preview",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_06?$preview$",
+                                "mediaItemFormat": "preview",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_06_thumbnail",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_06?$thumbnail$",
+                                "mediaItemFormat": "thumbnail",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_06_smallNormal",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_06?$smallNormal$",
+                                "mediaItemFormat": "smallNormal",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_06_normal",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_06?$normal$",
+                                "mediaItemFormat": "normal",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_06_largeNormal",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_06?$largeNormal$",
+                                "mediaItemFormat": "largeNormal",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_06_smallDetail",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_06?$smallDetail$",
+                                "mediaItemFormat": "smallDetail",
+                                "mediaItemMimeType": "image/jpeg"
+                            }
+                        ]
+                    },
+                    {
+                        "mediaName": "I9026_107006_07",
+                        "mediaItem": [
+                            {
+                                "mediaItemName": "I9026_107006_07_detail",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_07?$detail$",
+                                "mediaItemFormat": "detail",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_07",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_07?$SupplierMediaScene7InputFormat$",
+                                "mediaItemFormat": "SupplierMediaScene7InputFormat",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_07_smallThumbnail",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_07?$smallThumbnail$",
+                                "mediaItemFormat": "smallThumbnail",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_07_preview",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_07?$preview$",
+                                "mediaItemFormat": "preview",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_07_thumbnail",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_07?$thumbnail$",
+                                "mediaItemFormat": "thumbnail",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_07_smallNormal",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_07?$smallNormal$",
+                                "mediaItemFormat": "smallNormal",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_07_normal",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_07?$normal$",
+                                "mediaItemFormat": "normal",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_07_largeNormal",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_07?$largeNormal$",
+                                "mediaItemFormat": "largeNormal",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_07_smallDetail",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_07?$smallDetail$",
+                                "mediaItemFormat": "smallDetail",
+                                "mediaItemMimeType": "image/jpeg"
+                            }
+                        ]
+                    },
+                    {
+                        "mediaName": "I9026_107006_08",
+                        "mediaItem": [
+                            {
+                                "mediaItemName": "I9026_107006_08_detail",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_08?$detail$",
+                                "mediaItemFormat": "detail",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_08",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_08?$SupplierMediaScene7InputFormat$",
+                                "mediaItemFormat": "SupplierMediaScene7InputFormat",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_08_smallThumbnail",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_08?$smallThumbnail$",
+                                "mediaItemFormat": "smallThumbnail",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_08_preview",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_08?$preview$",
+                                "mediaItemFormat": "preview",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_08_thumbnail",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_08?$thumbnail$",
+                                "mediaItemFormat": "thumbnail",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_08_smallNormal",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_08?$smallNormal$",
+                                "mediaItemFormat": "smallNormal",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_08_normal",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_08?$normal$",
+                                "mediaItemFormat": "normal",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_08_largeNormal",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_08?$largeNormal$",
+                                "mediaItemFormat": "largeNormal",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_08_smallDetail",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_08?$smallDetail$",
+                                "mediaItemFormat": "smallDetail",
+                                "mediaItemMimeType": "image/jpeg"
+                            }
+                        ]
+                    },
+                    {
+                        "mediaName": "I9026_107006_19",
+                        "mediaItem": [
+                            {
+                                "mediaItemName": "I9026_107006_19_detail",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_19?$detail$",
+                                "mediaItemFormat": "detail",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_19",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_19?$SupplierMediaScene7InputFormat$",
+                                "mediaItemFormat": "SupplierMediaScene7InputFormat",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_19_smallThumbnail",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_19?$smallThumbnail$",
+                                "mediaItemFormat": "smallThumbnail",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_19_preview",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_19?$preview$",
+                                "mediaItemFormat": "preview",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_19_thumbnail",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_19?$thumbnail$",
+                                "mediaItemFormat": "thumbnail",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_19_smallNormal",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_19?$smallNormal$",
+                                "mediaItemFormat": "smallNormal",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_19_normal",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_19?$normal$",
+                                "mediaItemFormat": "normal",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_19_largeNormal",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_19?$largeNormal$",
+                                "mediaItemFormat": "largeNormal",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_19_smallDetail",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_19?$smallDetail$",
+                                "mediaItemFormat": "smallDetail",
+                                "mediaItemMimeType": "image/jpeg"
+                            }
+                        ]
+                    },
+                    {
+                        "mediaName": "I9026_107006_20",
+                        "mediaItem": [
+                            {
+                                "mediaItemName": "I9026_107006_20_detail",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_20?$detail$",
+                                "mediaItemFormat": "detail",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_20",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_20?$SupplierMediaScene7InputFormat$",
+                                "mediaItemFormat": "SupplierMediaScene7InputFormat",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_20_smallThumbnail",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_20?$smallThumbnail$",
+                                "mediaItemFormat": "smallThumbnail",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_20_preview",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_20?$preview$",
+                                "mediaItemFormat": "preview",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_20_thumbnail",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_20?$thumbnail$",
+                                "mediaItemFormat": "thumbnail",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_20_smallNormal",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_20?$smallNormal$",
+                                "mediaItemFormat": "smallNormal",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_20_normal",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_20?$normal$",
+                                "mediaItemFormat": "normal",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_20_largeNormal",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_20?$largeNormal$",
+                                "mediaItemFormat": "largeNormal",
+                                "mediaItemMimeType": "image/jpeg"
+                            },
+                            {
+                                "mediaItemName": "I9026_107006_20_smallDetail",
+                                "mediaItemUrl": "//media.wickes.co.uk/is/image/wickes/I9026_107006_20?$smallDetail$",
+                                "mediaItemFormat": "smallDetail",
+                                "mediaItemMimeType": "image/jpeg"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "coshhSheets": [
+                {
+                    "coshhSheetsName": "coshhSheet",
+                    "mediaItem": [
+                        {
+                            "mediaItemName": "I9026_107006_COSHH_0",
+                            "mediaItemUrl": "//media.wickes.co.uk/is/content/wickes/I9026_107006_COSHH_0",
+                            "mediaItemFormat": "SupplierMediaScene7InputFormat",
+                            "mediaItemMimeType": "application/pdf"
+                        }
+                    ]
+                }
+            ],
+            "explosiveOrPoison": "false",
+            "components": [
+                {
+                    "componentType": "Component",
+                    "componentSupplier": "12252",
+                    "componentGPID": "1000686275",
+                    "componentQuantity": "10",
+                    "componentSKU": [
+                        {
+                            "componentSKUCode": "114051",
+                            "componentSKUCatalogFamily": "GroupMasterProductCatalog"
+                        }
+                    ]
+                },
+                {
+                    "componentType": "Component",
+                    "componentSupplier": "12252",
+                    "componentGPID": "1000588533",
+                    "componentQuantity": "8",
+                    "componentSKU": [
+                        {
+                            "componentSKUCode": "105704",
+                            "componentSKUCatalogFamily": "GroupMasterProductCatalog"
+                        }
+                    ]
+                },
+                {
+                    "componentType": "Component",
+                    "componentSupplier": "12252",
+                    "componentGPID": "1000479663",
+                    "componentQuantity": "4",
+                    "componentSKU": [
+                        {
+                            "componentSKUCode": "195750",
+                            "componentSKUCatalogFamily": "GroupMasterProductCatalog"
+                        }
+                    ]
+                }
+            ],
+            "supplierData": [
+                {
+                    "supplierPartNumber": "5092147",
+                    "supplierId": "I0165",
+                    "supplierGTIN": [
+                        {
+                            "gtin": "5010212503805",
+                            "GTIN": "5010212503805",
+                            "supplierUOM": "EA"
+                        }
+                    ]
+                }
+            ],
+            "coreProperties": {
+                "property": []
+            },
+            "attributeGroup": [
+                {
+                    "attributeGroupId": "jdaClassification",
+                    "attribute": [
+                        {
+                            "attributeId": "7",
+                            "attributeName": "Consignment Type",
+                            "attributeValue": "0"
+                        },
+                        {
+                            "attributeId": "6",
+                            "attributeName": "No Order",
+                            "attributeValue": "N"
+                        },
+                        {
+                            "attributeId": "4",
+                            "attributeName": "Buyer",
+                            "attributeValue": "RA"
+                        },
+                        {
+                            "attributeId": "10",
+                            "attributeName": "Sales Type",
+                            "attributeValue": "B"
+                        },
+                        {
+                            "attributeId": "8",
+                            "attributeName": "Security Tagged",
+                            "attributeValue": "N"
+                        },
+                        {
+                            "attributeId": "11",
+                            "attributeName": "Saleable Item",
+                            "attributeValue": "Y"
+                        },
+                        {
+                            "attributeId": "2",
+                            "attributeName": "Order From Date",
+                            "attributeValue": "01/02/2013"
+                        },
+                        {
+                            "attributeId": "9",
+                            "attributeName": "Display Factor",
+                            "attributeValue": "2"
+                        },
+                        {
+                            "attributeId": "12",
+                            "attributeName": "Timber Content",
+                            "attributeValue": "N"
+                        },
+                        {
+                            "attributeId": "5",
+                            "attributeName": "Non-Stocked",
+                            "attributeValue": "N"
+                        },
+                        {
+                            "attributeId": "1",
+                            "attributeName": "Vendor Number",
+                            "attributeValue": "1454"
+                        },
+                        {
+                            "attributeId": "13",
+                            "attributeName": "Wickes Selling UOM",
+                            "attributeValue": "EACH"
+                        }
+                    ]
+                },
+                {
+                    "attributeGroupId": "CommonSupplierWebClassification",
+                    "attribute": [
+                        {
+                            "attributeId": "8",
+                            "attributeName": "Sustainability",
+                            "attributeValue": "UP1_Red"
+                        },
+                        {
+                            "attributeId": "9",
+                            "attributeName": "Brand Name",
+                            "attributeValue": "Dulux"
+                        }
+                    ]
+                },
+                {
+                    "attributeGroupId": "CommonSupplierNonWebClassification",
+                    "attribute": [
+                        {
+                            "attributeId": "4",
+                            "attributeName": "Age Restriction",
+                            "attributeValue": "N"
+                        },
+                        {
+                            "attributeId": "12",
+                            "attributeName": "Weight UOM",
+                            "attributeValue": "EA"
+                        },
+                        {
+                            "attributeId": "11",
+                            "attributeName": "Weight",
+                            "attributeValue": "3.571"
+                        }
+                    ]
+                },
+                {
+                    "attributeGroupId": "CommonNonSupplierClassification",
+                    "attribute": [
+                        {
+                            "attributeId": "1",
+                            "attributeName": "Staff Discount",
+                            "attributeValue": "Y"
+                        }
+                    ]
+                },
+                {
+                    "attributeGroupId": "MarketplaceClassification",
+                    "attribute": [
+                        {
+                            "attributeId": "5000001",
+                            "attributeName": "eBay Enabled",
+                            "attributeValue": "FALSE"
+                        }
+                    ]
+                },
+                {
+                    "attributeGroupId": "GroupMasterClassification:1004017",
+                    "attribute": [
+                        {
+                            "attributeId": "1011947",
+                            "attributeName": "Colour Family",
+                            "attributeValue": "Purples"
+                        },
+                        {
+                            "attributeId": "1000187",
+                            "attributeName": "Colour",
+                            "attributeValue": "Frosted Steel"
+                        },
+                        {
+                            "attributeId": "1001996",
+                            "attributeName": "Finish",
+                            "attributeValue": "Matt"
+                        },
+                        {
+                            "attributeId": "1000186",
+                            "attributeName": "Size",
+                            "attributeValue": "2.5 L"
+                        },
+                        {
+                            "attributeId": "1020305",
+                            "attributeName": "Application Method",
+                            "attributeValue": "Brush or roller"
+                        },
+                        {
+                            "attributeId": "1069028",
+                            "attributeName": "Interior or Exterior Use",
+                            "attributeValue": "Interior"
+                        },
+                        {
+                            "attributeId": "1011917",
+                            "attributeName": "Coverage per Litre",
+                            "attributeValue": "13 m²"
+                        },
+                        {
+                            "attributeId": "1011946",
+                            "attributeName": "Drying Time",
+                            "attributeValue": "5 hours"
+                        },
+                        {
+                            "attributeId": "1055008",
+                            "attributeName": "Drying time between coats",
+                            "attributeValue": "6 hours"
+                        },
+                        {
+                            "attributeId": "1011948",
+                            "attributeName": "Washable",
+                            "attributeValue": "Yes"
+                        },
+                        {
+                            "attributeId": "1055007",
+                            "attributeName": "Clean equipment with",
+                            "attributeValue": "Remove as much paint as possible from the equipment before cleaning with water"
+                        },
+                        {
+                            "attributeId": "1055005",
+                            "attributeName": "Suitable for",
+                            "attributeValue": "Kitchens"
+                        },
+                        {
+                            "attributeId": "1011954",
+                            "attributeName": "VOC Level",
+                            "attributeValue": "Low"
+                        },
+                        {
+                            "attributeId": "1000179",
+                            "attributeName": "Type",
+                            "attributeValue": "Durable Emulsion"
+                        }
+                    ]
+                }
+            ],
+            "attributes": {
+                "storeBarcode": "21070068",
+                "unitOfMeasure": "L",
+                "equivalentDivisorMeasure": "2.5",
+                "productWeight": "3.57",
+                "caseWeight": "3.571",
+                "caseQty": "1",
+                "caseStdPack": "1",
+                "caseWeightUOM": "KG",
+                "warehouseNumber": "544",
+                "rangingClass": "P",
+                "attributeSKUType": [
+                    "N"
+                ],
+                "buyer": "RA",
+                "salesType": "B",
+                "freightClass": "UK",
+                "iwSupplier": "01760",
+                "serviceClass": "DULUX",
+                "palletItem": "Y",
+                "newProduct": "NEW",
+                "distantShopping": "Y",
+                "palletOut": "UK",
+                "webDisplay": "Y",
+                "businessUnit": "None",
+                "analyst": "ROAMS",
+                "pareto": "D",
+                "productLifecycle": "3",
+                "autoReplenMPQ": "1",
+                "bulkSingleIndicator": "NONE",
+                "relatedSingleSKU": 0,
+                "bulkQty": 0,
+                "lifecycleFrom": "2019-05-18",
+                "jdaSupplierPartNumber": "5092147",
+                "jdaSupplierPartNumbers": [
+                    "5092147"
+                ]
+            }
+        }
+    ],
+    "nextPageReference": "7b2267706964223a7b2273223a2231303030353638323138227d7d"
+}
